@@ -1,0 +1,5 @@
+class RemoveFllowerIdFromRelationships < ActiveRecord::Migration[5.2]
+  def change
+    remove_column :relationships, :fllower_id, :integer
+  end
+end
