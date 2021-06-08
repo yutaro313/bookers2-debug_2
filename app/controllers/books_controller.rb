@@ -10,7 +10,7 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    @books = Book.all.sort {|a,b|b.favorited_users.count <=> a.favorited_users.count}
     @book = Book.new
     @user = current_user
   end
