@@ -5,6 +5,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @books = @user.books
     @book = Book.new
+    @today = Book.today
+    @yesterday = Book.yesterday
+
+    @this_week = Book.this_week
+    @last_week = Book.last_week
+    @week_difference = (@this_week/@last_week)*100
   end
 
   def index
