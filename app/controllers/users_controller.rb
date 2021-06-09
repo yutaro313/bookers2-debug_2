@@ -7,10 +7,10 @@ class UsersController < ApplicationController
     @book = Book.new
     @today = Book.today
     @yesterday = Book.yesterday
-
+    @day_difference = @today.to_f/@yesterday.to_f*100
     @this_week = Book.this_week
     @last_week = Book.last_week
-    @week_difference = (@this_week/@last_week)*100
+    @week_difference = @this_week.to_f/@last_week.to_f*100
   end
 
   def index

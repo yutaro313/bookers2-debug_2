@@ -22,7 +22,7 @@
         <tr>
           <td><%= @today %></td>
           <td><%= @yesterday %></td>
-          <td></td>
+          <td><%=  @day_difference %>%</td>
         </tr>
       </tbody>
     </table>
@@ -39,7 +39,7 @@
         <tr>
           <td><%= @this_week %></td>
           <td><%= @last_week %></td>
-          <td><%= @week_difference %></td>
+          <td><%= @week_difference.floor(1) %>%</td>
         </tr>
       </tbody>
     </table>
