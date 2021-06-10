@@ -9,6 +9,7 @@ class BooksController < ApplicationController
     @comments = @book.comments.order(created_at: :desc)
   end
 
+
   def index
     @books = Book.all.sort {|a,b|b.favorited_users.count <=> a.favorited_users.count}
     @book = Book.new
@@ -56,7 +57,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.require(:book).permit(:title, :body, :rate)
   end
 
   def ensure_correct_user
